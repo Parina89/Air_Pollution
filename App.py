@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # Load model
-model.load(open("model", "rb"))
+model.load(open("model"))
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
