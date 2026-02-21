@@ -3,14 +3,14 @@ import pickle
 import numpy as np
 import pandas as pd
 # import pickle
-from pathlib import Path
+# from pathlib import Path
 
-model_path = Path(__file__).parent / "model.pkl"
+# model_path = Path(__file__).parent / "model.pkl"
 
-with open(model_path, "rb") as f:
-    model = pickle.load(f)
+# with open(model_path, "rb") as f:
+#     model = pickle.load(f)
 # Load model
-# model = pickle.load(open("model.pkl", "rb"))
+ model = pickle.load(open("model.pkl", "rb"))
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
