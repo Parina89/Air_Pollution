@@ -1,0 +1,48 @@
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.impute import SimpleImputer
+import pickle
+
+# Load dataset
+data = pd.read_csv("Data.csv")
+
+# Clean column names
+data.columns = data.columns.str.strip()
+
+# ❗ Remove rows where target (AQI_Category) is missing
+data = data.dropna(subset=["AQI_Category"])
+
+# Split features and target
+X = data.drop("AQI_Category", axis=1)
+y = data["AQI_Category"]
+
+# Convert features to numeric (force errors → NaN)
+for col in X.columns:
+    X[col] = pd.to_numeric(X[col], errors="coerce")
+
+print("NaN in X before impute:\n", X.isnull().sum())
+print("NaN in y:\n", y.isnull().sum())
+
+# Impute missing values in X
+imputer = SimpleImputer(strategy="mean")
+X = imputer.fit_transform(X)
+
+print("Any NaN left in X:", np.isnan(X).sum())
+
+# Split AFTER cleaning
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Train model
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Save model + imputer
+with open("model.pkl", "wb") as f:
+    pickle.dump((model, imputer), f)
+
+print("✅ Model trained successfully!")
+print("Training accuracy:", model.score(X_train, y_train))
