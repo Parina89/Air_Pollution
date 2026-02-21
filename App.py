@@ -5,7 +5,7 @@ import pandas as pd
 
 # Load model
 try:
-    model, imputer = pickle.load(open("model.pkl", "rb"))
+    model, imputer = pickle.load(open("model", "rb"))
 except:
     st.error("❌ Model not found. Upload model.pkl")
     st.stop()
