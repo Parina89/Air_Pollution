@@ -4,7 +4,12 @@ import numpy as np
 import pandas as pd
 
 # Load model
-model.load(open("model"))
+try:
+    model, imputer = pickle.load(open("model.pkl", "rb"))
+except:
+    st.error("❌ Model not found. Upload model.pkl")
+    st.stop()
+# model.load(open("model"))
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
