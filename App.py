@@ -10,7 +10,7 @@ import pandas as pd
 # with open(model_path, "rb") as f:
 #     model = pickle.load(f)
 # Load model
- model = pickle.load(open("model.pkl", "rb"))
+ model = pickle.load(open("Model.pkl", "rb"))
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
