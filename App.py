@@ -28,7 +28,7 @@ if st.button("Predict AQI Level"):
 
     # Color indicator
     if prediction[0] == "Good":
-        st.markdown("🟢 Air quality is satisfactory")
+        st.markdown(#008000 "Air quality is satisfactory")
     elif prediction[0] == "Moderate":
         st.markdown("🟡 Air quality is acceptable")
     elif prediction[0] == "Unhealthy":
