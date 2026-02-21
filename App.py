@@ -40,7 +40,7 @@ if st.button("Predict AQI Level"):
 
 # Show dataset
 st.subheader("📊 Sample Air Quality Dataset")
-data = pd.read_csv("air_quality_data.csv")
+data = pd.read_csv("Data.csv")
 st.dataframe(data)
 
 # Optional: Plot AQI distribution
