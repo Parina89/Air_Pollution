@@ -1,0 +1,24 @@
+# train_model.py - Run this file ONCE to create model.pkl
+import pickle
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+# Load your dataset
+data = pd.read_csv("Data.csv")
+
+# Define features and target
+X = data[["PM2.5", "PM10", "NO2", "CO", "O3"]]
+y = data["AQI_Category"]
+
+# Train model
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Save model
+with open("model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+print("Model saved successfully!")
