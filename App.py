@@ -8,7 +8,7 @@ import os
 
 # Load model safely
 if os.path.exists("model.pkl"):
-    with open("model.pkl", "rb") as f:
+    with open("model (1).pkl", "rb") as f:
         model = pickle.load(f)
 else:
     st.error("Model file not found! Please run train_model.py first.")
