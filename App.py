@@ -20,7 +20,7 @@ o3 = st.number_input("O3")
 
 if st.button("Predict AQI Level"):
 
-    input_data = np.array([[PM2.5, PM10, NO2, CO, O3]])
+    input_data = np.array([[PM25, PM10, NO2, CO, O3]])
     prediction = model.predict(input_data)
 
     st.subheader("Predicted Air Quality Level:")
