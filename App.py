@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import os
 # Load model
-model.load(open("model.pkl"))
+#model.load(open("model.pkl"))
 
 # # Load model safely
 # if os.path.exists("model (1).pkl"):
