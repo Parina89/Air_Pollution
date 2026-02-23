@@ -8,7 +8,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
-st.title("🌫 Air Pollution Level Detection System")
+st.title(" Air Pollution Level Detection System")
 st.write("Enter pollutant values to predict AQI category")
 
 # Input fields
