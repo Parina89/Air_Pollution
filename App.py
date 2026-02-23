@@ -6,6 +6,9 @@ import pandas as pd
 # Load model
 # model.load(open("model"))
 
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
+
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
 st.title(" Air Pollution Level Detection System")
@@ -20,11 +23,12 @@ o3 = st.number_input("O3")
 
 if st.button("Predict AQI Level"):
 
-    input_data = np.array([[PM25, PM10, NO2, CO, O3]])
+    input_data = np.array([[pm25, pm10, no2, co, o3]])  # lowercase variables
     prediction = model.predict(input_data)
-
+    
     st.subheader("Predicted Air Quality Level:")
     st.success(prediction[0])
+
 
     # Color indicator
     if prediction[0] == "Good":
