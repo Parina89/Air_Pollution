@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 # import plotly.express as px
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
+from sklearn.ensemble 
+import RandomForestRegressor
+from sklearn.model_selection 
+import train_test_split
 
 # 1. Page Config & Title
 st.set_page_config(page_title="Air Pollution Detection", layout="wide")
