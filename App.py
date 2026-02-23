@@ -9,8 +9,8 @@ st.title("Air Pollution Level Detection System")
 st.write("Enter pollutant values to predict AQI category")
 
 # ✅ Load model at top level (outside any if block)
-if os.path.exists("model.pkl"):
-    with open("model.pkl", "rb") as f:
+if os.path.exists("model (1).pkl"):
+    with open("model (1).pkl", "rb") as f:
         model = pickle.load(f)
 else:
     st.error("❌ model.pkl not found! Please run train_model.py first.")
