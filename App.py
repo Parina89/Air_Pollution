@@ -10,9 +10,9 @@ import os
 if os.path.exists("model.pkl"):
     with open("model (1).pkl", "rb") as f:
         model = pickle.load(f)
-else:
-    st.error("Model file not found! Please run train_model.py first.")
-    st.stop()
+# else:
+#     st.error("Model file not found! Please run train_model.py first.")
+#     st.stop()
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
 
