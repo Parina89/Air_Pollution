@@ -6,7 +6,7 @@ import pandas as pd
 # Load model
 # model.load(open("model"))
 
-with open("model.pkl", "rb") as f:
+with open("model (1).pkl", "rb") as f:
     model = pickle.load(f)
 
 st.set_page_config(page_title="Air Pollution Level Detection", layout="centered")
